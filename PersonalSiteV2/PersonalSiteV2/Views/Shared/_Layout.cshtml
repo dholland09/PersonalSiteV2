@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Derek Holland-Developer | @ViewData["Title"] </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&amp;display=swap">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="~/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="~/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="~/img/dhlogo1.png">
+  </head>
+  <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+        <div class="container"><a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/img/dhlogo1.png" alt="" width="45"></a>
+          <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto">
+                        @if (ViewData["Title"].ToString() == "Home Page")
+                        {
+                            <li class="nav-item"><a class="nav-link text-uppercase active" href="#hero">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="#about me">About Me</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="#resume">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="#projects">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="#links">Links</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Contact", "Home")">Contact</a></li>
+                        }
+                        else 
+                        {
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Index", "Home")">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Index", "Home")">About Me</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Index", "Home")">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Index", "Home")">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase" href="@Url.Action("Index", "Home")">Links</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase active" href="@Url.Action("Contact", "Home")">Contact</a></li>
+                            
+                        }
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+  @RenderBody()
+
+
+    
+    
+
+
+    <!-- Footer-->
+    <footer class="pt-5">
+      <div class="container text-center py-5">
+        <div class="row px-4">
+          <div class="col-lg-7 mx-auto">
+            <h2 class="text-uppercase mb-0">Derek Holland </h2>
+            <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Full Stack Developer</h6>
+            <p class="text-muted my-4">You need to be aware of what others are doing, applaud their efforts, acknowledge their successes, and encourage them in their pursuits. When we all help one another, everybody wins. - Jim Stovall</p>
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item"><a class="social-link" target="_blank" href="https://www.linkedin.com/in/derek-holland-79a6b9149/"><i class="fab fa-linkedin-in"></i></a></li>
+              <li class="list-inline-item"><a class="social-link" target="_blank" href="https://github.com/dholland09"><i class="fab fa-github-alt"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyrights px-4">
+        <div class="container py-4 border-top text-center">
+          <p class="mb-0 text-muted py-2">&copy; 2022 www.derek-holland.com Template designed by <a href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+        </div>
+      </div>
+    </footer>
+    <!-- JavaScript files-->
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/front.js"></script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    @RenderSection("scripts", required:false)
+  </body>
+</html>
